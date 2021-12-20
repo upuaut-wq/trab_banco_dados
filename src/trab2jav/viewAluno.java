@@ -15,12 +15,11 @@ public class viewAluno {
 	}
 	
 	
-	public void menu() throws IOException {
+	public void menu() throws IOException, InterruptedException {
 		boolean op = true;
 		scanner = new Scanner(System.in);
 		int option_select = -1;
 		while(op != false) {
-			Runtime.getRuntime().exec("clear");
 			System.out.println("\n\n\n===Escolher ação==============");
 			System.out.println("1 - Inserir Aluno");
 			System.out.println("2 - Buscar Aluno");
@@ -32,35 +31,38 @@ public class viewAluno {
 			switch (option_select) {
 			case 1:
 				//Insert file
-				Runtime.getRuntime().exec("clear");
-				System.out.println("===Inserir dados================");
+				
+				System.out.println("\n\n\n===Inserir dados================");
 				modelAluno ma = insert_aluno_scanner();
 				boolean ret0 = ca.insert_aluno(ma);
 				if(ret0 == true) {
-					System.out.println("Inserido com sucesso...");
+					System.out.println("\n\nInserido com sucesso...");
 				}else {
-					System.out.println("Erro...");
+					System.out.println("\n\nFalha ao inserir dados...");
 				}
+				
 				break;
 			case 2:
 				Runtime.getRuntime().exec("clear");
-				System.out.println("===Buscar dados==================");
+				System.out.println("\n\n\n===Buscar dados==================");
 				modelAluno md = ca.busca_aluno(busca_aluno_scanner());
 				if(md != null) {
 					System.out.println(ca.convert_model_string(md));
 				}else {
-					System.out.println("Cpf não existe...");
+					System.out.println("\n\nCpf não existe...");
 				}
+				
 				break;
 			case 3:
 				Runtime.getRuntime().exec("clear");
-				System.out.println("===Deletar dados==================");
+				System.out.println("\n\n\n===Deletar dados==================");
 				boolean ret = ca.deleta_aluno(deleta_aluno_scanner());
 				if(ret == true) {
-					System.out.println("Dado Deletado...");
+					System.out.println("\n\nDado Deletado...");
 				}else {
-					System.out.println("Dado não existe");
+					System.out.println("\n\nDado não existe.");
 				}
+				
 				break;
 			default:
 				break;

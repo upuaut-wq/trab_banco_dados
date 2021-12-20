@@ -1,7 +1,6 @@
 0:leonardo de jesus queiroz:08775756969:171:esquina:1:1:1:1:1:1
-1:Leo1:2313:321:12:1:1:1:1:1:0
-2:Leo2:213:12:12:12:1:1:1:1:0
-3:Leo3:232:21:12:1:1:1:1:1:1
-4:Leonardo de Jesus:08772756969:171:Esquina:1:1:1:1:1:1
-5:Aline Silva:456:123:Cruzamento:1:1:1:1:1:1
-6:Aline dos Santos:654:123:NA:1:1:2:3:4:1
+1:Joao:122:144:NA:1:1:2:1:1:1
+2:Leonardo de Jesus:08772756969:171:Esquina:1:1:1:1:1:1
+3:Rayane:144:12:Esquina:1:1:1:1:1:0
+4:Aline dos Santos:654:123:NA:1:1:2:3:4:1
+5:Caio:147:23:NA:1:1:1:1:1:0

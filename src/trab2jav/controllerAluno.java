@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import trab2jav.modelAluno;
 
+
 public class controllerAluno {
 	modelHead mh;
 	
@@ -32,7 +33,7 @@ public class controllerAluno {
 			//Escreve no final
 			model.id_aluno = mh.qt_total;
 			mh.qt_total++;
-			String str = convert_model_string(model);
+			String str = convert_model_string(model) + '\n';
 			try (BufferedWriter writer = Files.newBufferedWriter(a, StandardOpenOption.APPEND)) {
 			    writer.write(str);
 			} catch (IOException ioe) {
@@ -73,7 +74,7 @@ public class controllerAluno {
 		str_ret += Integer.toString(model.id_telefone) + ":";
 		str_ret += Integer.toString(model.id_tipo_ingresso)+ ":";
 		str_ret += Integer.toString(model.free);
-		str_ret += '\n';
+		//str_ret += '\n';
 		return str_ret;
 		
 	}
@@ -196,7 +197,7 @@ public class controllerAluno {
         while ((line = file.readLine()) != null) {
         	if(i == pos) {
         		model.id_aluno = pos;
-                line = convert_model_string(model);
+                line = convert_model_string(model) + '\n';
                 inputBuffer.append(line);
         	}else {
         		inputBuffer.append(line);
@@ -217,7 +218,7 @@ public class controllerAluno {
 	}
 	
 	public void at_head() throws IOException {
-		String str = Integer.toString(mh.qt_total) + '\n';
+		String str = Integer.toString(mh.qt_total)  + '\n';
 		str += Integer.toString(mh.qt_free) + '\n';
 		
 		int max = mh.qt_free;
@@ -244,7 +245,7 @@ public boolean deleta_aluno(String cpf) throws IOException {
         	if(md.cpf.equals(cpf) && md.free != 0) {
         		md.free = 0;
         		
-        		inputBuffer.append(convert_model_string(md));
+        		inputBuffer.append(convert_model_string(md) + '\n');
                 pos_deleted = i;
         	}else {
         		inputBuffer.append(line);
